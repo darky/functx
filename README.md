@@ -10,7 +10,7 @@ gleam add functx
 ```
 
 ```gleam
-import functx
+import functx.{type Ctx}
 
 fn nums(ctx: Ctx(Int)) {
   // this function called only once during context
