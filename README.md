@@ -3,6 +3,8 @@
 [![Package Version](https://img.shields.io/hexpm/v/functx)](https://hex.pm/packages/functx)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/functx/)
 
+Tiny Gleam caching Context for your functions
+
 ```sh
 gleam add functx
 ```
