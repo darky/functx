@@ -1,4 +1,4 @@
-import functx
+import functx.{type Ctx}
 import gleam/dict
 import gleam/int
 import gleam/io
@@ -28,7 +28,7 @@ pub fn call_test() {
   |> should.equal(3)
 }
 
-fn nums(ctx) {
+fn nums(ctx: Ctx(Int)) {
   io.debug("hit")
 
   let #(n, _) = ctx
