@@ -6,11 +6,56 @@
 ```sh
 gleam add functx
 ```
+
 ```gleam
 import functx
 
+fn nums(ctx: Ctx(Int)) {
+  // this function called only once during context
+
+  let #(n, _) = ctx
+
+  #([1, 2, 3, 4, 5, 6, 7, 8, 9, n], ctx)
+}
+
+fn nums_as_string(ctx) {
+  use ns, ctx <- functx.call(ctx, nums)
+
+  let resp =
+    ns
+    |> list.map(fn(n) { n |> int.to_string })
+    |> string.join(",")
+
+  #(resp, ctx)
+}
+
+fn nums_to_sum(ctx) {
+  use ns, ctx <- functx.call(ctx, nums)
+
+  let resp = {
+    use acc, n <- list.fold(ns, 0)
+    acc + n
+  }
+
+  #(resp, ctx)
+}
+
+fn nums_summary(ctx) {
+  use ns_str, ctx <- functx.call(ctx, nums_as_string)
+  use ns_sum, ctx <- functx.call(ctx, nums_to_sum)
+
+  let resp = "Nums: " <> ns_str <> " Sum: " <> ns_sum |> int.to_string
+
+  #(resp, ctx)
+}
+
 pub fn main() {
-  // TODO: An example of the project in use
+  let resp =
+    10
+    |> functx.make_ctx
+    |> nums_summary
+
+  resp.0 // Nums: 1,2,3,4,5,6,7,8,9,10 Sum: 55
 }
 ```
 
