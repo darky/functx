@@ -70,3 +70,8 @@ gleam run   # Run the project
 gleam test  # Run the tests
 gleam shell # Run an Erlang shell
 ```
+
+## See also
+
+- [context-fp](https://github.com/darky/context-fp) - Functional programming context for TypeScript
+- [context-fp-go](https://github.com/darky/context-fp-go) - Functional programming context for Golang
