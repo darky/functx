@@ -2,6 +2,8 @@
 
 [![Package Version](https://img.shields.io/hexpm/v/functx)](https://hex.pm/packages/functx)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/functx/)
+![Erlang-compatible](https://img.shields.io/badge/target-erlang-a2003e)
+![JavaScript-compatible](https://img.shields.io/badge/target-javascript-f1e05a)
 
 ![logo](logo.png)
 
